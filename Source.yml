@@ -3,9 +3,19 @@ version: 2
 sources:
   - name: default
     description: "Raw ingestion tables from the lakehouse"
-    catalog: main      # <-- MUST be nested directly under the source name
-    schema: default 
-    
+    catalog: main
+    schema: default
+
     tables:
-      - name: san_test  # <-- Lowercased to match Databricks Catalog Explorer
+      - name: san_test
         description: "Raw customer ingestion table"
+
+        config:
+          loaded_at_field: review_date
+          freshness:
+            warn_after:
+              count: 2
+              period: hour
+            error_after:
+              count: 4
+              period: hour
