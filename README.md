@@ -5,7 +5,7 @@ This project demonstrates how dbt can be used to transform raw customer data int
 
 Tech Stack
 • dbt Core
-• Snowflake
+• databricks
 • SQL
 
 Project Structure
